@@ -1,0 +1,14 @@
+{
+    "name": "eternal-knot-studio-root",
+    "version": "1.0.0",
+    "description": "Root package for deployment",
+    "scripts": {
+        "postinstall": "npm install --prefix server && npm install --prefix client",
+        "build": "npm run build --prefix client",
+        "start": "node server/server.js"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {}
+}
