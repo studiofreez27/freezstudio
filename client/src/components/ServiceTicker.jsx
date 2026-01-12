@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const services = [
+const defaultServices = [
     "Pre & Post Wedding Photography",
     "Traditional Photography",
     "Candid Photography",
@@ -12,7 +12,9 @@ const services = [
     "Corporate Events"
 ];
 
-const ServiceTicker = () => {
+const ServiceTicker = ({ customServices }) => {
+    const servicesToDisplay = customServices || defaultServices;
+
     return (
         <div className="bg-wedding-gold text-white h-16 flex items-center overflow-hidden relative z-20">
             <motion.div
@@ -25,7 +27,7 @@ const ServiceTicker = () => {
                 }}
             >
                 {/* Repeat the list multiple times to ensure continuous flow */}
-                {[...services, ...services, ...services, ...services].map((service, index) => (
+                {[...servicesToDisplay, ...servicesToDisplay, ...servicesToDisplay, ...servicesToDisplay].map((service, index) => (
                     <div key={index} className="flex items-center gap-4 text-xl font-bold tracking-wider uppercase mr-16">
                         <span>{service}</span>
                         <span className="w-2 h-2 bg-white rounded-full"></span>

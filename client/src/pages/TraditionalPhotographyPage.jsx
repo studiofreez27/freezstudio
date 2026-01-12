@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Scroll, Users, Music, Heart, Sun, Flame, Flower } from 'lucide-react';
+import ServiceTicker from '../components/ServiceTicker';
 import WhyChooseUs from '../components/WhyChooseUs';
 
 const TraditionalPhotographyPage = () => {
@@ -72,6 +73,20 @@ const TraditionalPhotographyPage = () => {
                     </p>
                 </motion.div>
             </div>
+
+            {/* Service Ticker */}
+            <ServiceTicker
+                customServices={[
+                    "Muhurtham",
+                    "Kasi Yatra",
+                    "Oonjal Ceremony",
+                    "Mangalya Dharanam",
+                    "Nadaswaram",
+                    "Family Blessings",
+                    "Vedic Rituals",
+                    "Traditional Vibes"
+                ]}
+            />
 
             {/* Rituals Grid */}
             <div className="py-20 bg-wedding-gold/5">

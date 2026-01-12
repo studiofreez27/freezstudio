@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, Camera, MapPin, Sparkles, Image as ImageIcon, Sun, Moon, Flower } from 'lucide-react';
+import ServiceTicker from '../components/ServiceTicker';
 import WhyChooseUs from '../components/WhyChooseUs';
 
 const PrePostWeddingPage = () => {
@@ -101,6 +102,20 @@ const PrePostWeddingPage = () => {
                     </motion.div>
                 </div>
             </section>
+
+            {/* Service Ticker */}
+            <ServiceTicker
+                customServices={[
+                    "Couple Shoots",
+                    "Temple Architecture",
+                    "Heritage Locations",
+                    "Traditional Attire",
+                    "Kanjivaram Saree",
+                    "Veshti Sattai",
+                    "Divine Vibes",
+                    "Pre-Wedding Love"
+                ]}
+            />
 
             {/* Divider with Kolam/Pattern motif if possible, using simple line for now */}
             <div className="flex items-center justify-center my-10 opacity-30">

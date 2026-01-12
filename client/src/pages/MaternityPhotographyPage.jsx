@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, Sparkles, Flower, User, Music, Sun } from 'lucide-react';
+import ServiceTicker from '../components/ServiceTicker';
 import WhyChooseUs from '../components/WhyChooseUs';
 
 const MaternityPhotographyPage = () => {
@@ -72,6 +73,20 @@ const MaternityPhotographyPage = () => {
                     </p>
                 </motion.div>
             </div>
+
+            {/* Service Ticker */}
+            <ServiceTicker
+                customServices={[
+                    "Valaikaappu",
+                    "Seemantham",
+                    "Motherhood Glow",
+                    "Baby Bump",
+                    "Family Love",
+                    "Traditional Blessings",
+                    "New Beginnings",
+                    "Divine Journey"
+                ]}
+            />
 
             {/* Themes Grid */}
             <div className="py-20 bg-wedding-gold/5">

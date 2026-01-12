@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Smile, Zap, Eye, Heart, Camera, Sparkles } from 'lucide-react';
+import ServiceTicker from '../components/ServiceTicker';
 import WhyChooseUs from '../components/WhyChooseUs';
 
 const CandidPhotographyPage = () => {
@@ -72,6 +73,20 @@ const CandidPhotographyPage = () => {
                     </p>
                 </motion.div>
             </div>
+
+            {/* Service Ticker */}
+            <ServiceTicker
+                customServices={[
+                    "Real Emotions",
+                    "Unseen Moments",
+                    "Laughter & Tears",
+                    "Stolen Glances",
+                    "Pure Joy",
+                    "Candid Smiles",
+                    "Storytelling",
+                    "Authentic Vibes"
+                ]}
+            />
 
             {/* Moments Grid */}
             <div className="py-20 bg-wedding-gold/5">

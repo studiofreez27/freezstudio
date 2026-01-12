@@ -147,7 +147,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {isOpen && (
-                    <div className="md:hidden fixed inset-0 top-0 z-40 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 animate-fade-in-down">
+                    <div className="md:hidden fixed inset-0 top-0 z-40 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 overflow-y-auto gap-8 animate-fade-in-down">
                         <div className="flex flex-col items-center gap-6">
                             {['Home', 'About', 'Services', 'Gallery', 'Contact'].map((item) => (
                                 <Link

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Play, Film, Video, Music, MonitorPlay, Zap } from 'lucide-react';
+import ServiceTicker from '../components/ServiceTicker';
 import WhyChooseUs from '../components/WhyChooseUs';
 
 const CinematicVideographyPage = () => {
@@ -41,14 +41,11 @@ const CinematicVideographyPage = () => {
                     className="w-full h-full object-cover opacity-60"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1 }}
+                    <div
                         className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 mb-8 cursor-pointer hover:bg-wedding-gold hover:border-wedding-gold transition-all duration-300 group"
                     >
                         <Play className="w-8 h-8 text-white fill-white ml-1 group-hover:scale-110 transition-transform" />
-                    </motion.div>
+                    </div>
                     <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-widest text-center px-4 uppercase bg-clip-text text-transparent bg-gradient-to-r from-wedding-gold via-white to-wedding-gold drop-shadow-2xl">
                         Cinematic <br /> Videography
                     </h1>
@@ -60,11 +57,7 @@ const CinematicVideographyPage = () => {
 
             {/* Intro Content */}
             <div className="py-24 container mx-auto px-4 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                <div
                     className="max-w-4xl mx-auto"
                 >
                     <div className="flex justify-center mb-6">
@@ -77,20 +70,30 @@ const CinematicVideographyPage = () => {
                     <p className="text-gray-400 text-lg leading-relaxed">
                         Every frame is composed like a painting. Every sound bite is chosen to move you. We create films that you will want to re-watch every anniversary.
                     </p>
-                </motion.div>
+                </div>
             </div>
+
+            {/* Service Ticker */}
+            <ServiceTicker
+                customServices={[
+                    "Cinematic Films",
+                    "Wedding Teasers",
+                    "4K Resolution",
+                    "Drone Shots",
+                    "Slow Motion",
+                    "Color Grading",
+                    "Storytelling",
+                    "Same Day Edit"
+                ]}
+            />
 
             {/* Features Grid */}
             <div className="py-20 bg-zinc-900">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {features.map((feature, index) => (
-                            <motion.div
+                            <div
                                 key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.2 }}
                                 className="bg-black/50 border border-white/10 p-8 rounded-xl hover:border-wedding-gold/50 transition-all duration-300 group hover:-translate-y-2"
                             >
                                 <div className="mb-6 relative h-48 w-full overflow-hidden rounded-lg">
@@ -100,13 +103,11 @@ const CinematicVideographyPage = () => {
                                         alt={feature.title}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                     />
-                                    <div className="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <Play className="w-12 h-12 text-white fill-white drop-shadow-lg" />
-                                    </div>
+                                    {/* Play button removed as per request */}
                                 </div>
                                 <h4 className="font-serif font-bold text-2xl text-white mb-3 group-hover:text-wedding-gold transition-colors">{feature.title}</h4>
                                 <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

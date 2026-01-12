@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Camera, Video, Heart, Users, Baby, ChevronLeft, ChevronRight, Briefcase, Sparkles, Image } from 'lucide-react';
-import { motion } from 'framer-motion';
+
 
 const services = [
     {
@@ -95,17 +95,13 @@ const Services = () => {
 
                     <div
                         ref={scrollRef}
-                        className="flex overflow-x-auto gap-6 md:gap-8 pb-12 snap-x snap-mandatory px-8 md:px-4 scrollbar-hide scroll-smooth"
+                        className="flex overflow-x-auto gap-6 md:gap-8 pb-12 px-8 md:px-4 scrollbar-hide scroll-smooth"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         {services.map((service, index) => (
-                            <motion.div
+                            <div
                                 key={index}
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: "-50px" }}
-                                transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.3) }} // Capped delay to avoid long waits
-                                className="min-w-[200px] md:min-w-[340px] max-w-[480px] bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden snap-start flex-shrink-0"
+                                className="min-w-[200px] md:min-w-[340px] max-w-[480px] bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden flex-shrink-0"
                             >
                                 <div className="h-[200px] md:h-64 overflow-hidden relative">
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
@@ -127,7 +123,7 @@ const Services = () => {
                                         {service.description}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

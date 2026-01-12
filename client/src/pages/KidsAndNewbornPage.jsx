@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Baby, Users, Heart, Camera, Smile } from 'lucide-react';
+import ServiceTicker from '../components/ServiceTicker';
 import WhyChooseUs from '../components/WhyChooseUs';
 
 const KidsAndNewbornPage = () => {
@@ -155,6 +156,20 @@ const KidsAndNewbornPage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Service Ticker */}
+            <ServiceTicker
+                customServices={[
+                    "Newborn Photography",
+                    "Baby Portraits",
+                    "Kids Outdoor Shoots",
+                    "Milestone Sessions",
+                    "Cake Smash",
+                    "Family Portraits",
+                    "Toddler Photography",
+                    "Creative Kids Shoots"
+                ]}
+            />
 
             {/* Gallery Preview / Call to Action */}
             <div className="py-20 bg-wedding-dark text-white relative overflow-hidden">

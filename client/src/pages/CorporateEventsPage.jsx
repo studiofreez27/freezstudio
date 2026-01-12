@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Briefcase, Users, Award, TrendingUp, Mic, Camera } from 'lucide-react';
+import ServiceTicker from '../components/ServiceTicker';
 import WhyChooseUs from '../components/WhyChooseUs';
 
 const CorporateEventsPage = () => {
@@ -115,6 +116,20 @@ const CorporateEventsPage = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Service Ticker */}
+            <ServiceTicker
+                customServices={[
+                    "Conferences",
+                    "Seminars",
+                    "Product Launches",
+                    "Team Building",
+                    "Award Nights",
+                    "Gala Dinners",
+                    "Corporate Headshots",
+                    "Brand Storytelling"
+                ]}
+            />
 
             {/* Services Grid */}
             <div className="py-20 bg-gray-50">

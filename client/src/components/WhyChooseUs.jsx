@@ -1,13 +1,13 @@
 import React from 'react';
 
-const WhyChooseUs = () => {
+const WhyChooseUs = ({ darkMode = false }) => {
     return (
-        <div className="py-20 bg-wedding-gold/10 text-white">
+        <div className={`py-20 ${darkMode ? "bg-zinc-950" : "bg-wedding-gold/10"} text-white transition-colors duration-300`}>
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     {/* Left Side - Content */}
                     <div className="w-full lg:w-1/2">
-                        <span className="text-wedding-dark uppercase tracking-widest font-semibold text-sm mb-2 block">Why Choose Us</span>
+                        <span className={`uppercase tracking-widest font-semibold text-sm mb-2 block ${darkMode ? "text-wedding-gold" : "text-wedding-dark"}`}>Why Choose Us</span>
                         <h2 className="text-2xl md:text-3xl text-wedding-gold font-serif font-bold mb-10 leading-tight">Why People Chose Us ?</h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
@@ -17,15 +17,15 @@ const WhyChooseUs = () => {
                                 { title: "Personalized", desc: "Tailored experiences that reflect your unique bond." },
                                 { title: "Professionalism", desc: "Dedicated, punctual, and seamless service." }
                             ].map((item, index) => (
-                                <div key={index} className="flex gap-4 group p-4 rounded-lg hover:bg-white/50 transition-all duration-300">
+                                <div key={index} className={`flex gap-4 group p-4 rounded-lg transition-all duration-300 ${darkMode ? "hover:bg-wedding-gold/5" : "hover:bg-white/50"}`}>
                                     <div className="w-12 h-12 rounded-full bg-wedding-gold/10 flex items-center justify-center flex-shrink-0 border border-wedding-gold/20 group-hover:border-wedding-gold group-hover:bg-wedding-gold group-hover:shadow-[0_0_15px_rgba(212,175,55,0.5)] transition-all duration-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-wedding-gold group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-bold mb-2 text-wedding-dark group-hover:text-wedding-gold transition-colors">{item.title}</h4>
-                                        <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors">{item.desc}</p>
+                                        <h4 className={`text-xl font-bold mb-2 transition-colors ${darkMode ? "text-white group-hover:text-wedding-gold" : "text-wedding-dark group-hover:text-wedding-gold"}`}>{item.title}</h4>
+                                        <p className={`text-sm leading-relaxed transition-colors ${darkMode ? "text-gray-400 group-hover:text-gray-200" : "text-gray-600 group-hover:text-gray-800"}`}>{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
