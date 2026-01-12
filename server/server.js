@@ -11,7 +11,6 @@ const Category = require('./models/Category');
 const Stat = require('./models/Stat');
 const Message = require('./models/Message');
 const Review = require('./models/Review');
-
 const User = require('./models/User');
 const jwt = require('jsonwebtoken');
 
@@ -26,7 +25,10 @@ if (!fs.existsSync(uploadDir)) {
 }
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://studioproject02.onrender.com'],
+    credentials: true
+}));
 app.use(express.json());
 app.use('/uploads', express.static(uploadDir)); // Serve uploaded files using absolute path
 
