@@ -1,5 +1,5 @@
 const config = {
-    API_URL: import.meta.env.PROD ? 'https://freezstudio-backend.onrender.com' : 'http://localhost:5000'
+    API_URL: 'https://freezstudio-backend.onrender.com'
 };
 
 export default config;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Trash2, Upload, Plus } from 'lucide-react';
+import config from '../config';
 
 const Admin = () => {
     const [items, setItems] = useState([]);
@@ -17,7 +18,7 @@ const Admin = () => {
 
     const fetchGalleryItems = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/gallery');
+            const response = await fetch(`${config.API_URL}/api/gallery`);
             const data = await response.json();
             setItems(data);
         } catch (error) {
@@ -43,7 +44,7 @@ const Admin = () => {
         data.append('image', formData.image);
 
         try {
-            const response = await fetch('http://localhost:5000/api/gallery', {
+            const response = await fetch(`${config.API_URL}/api/gallery`, {
                 method: 'POST',
                 body: data,
             });
@@ -69,7 +70,7 @@ const Admin = () => {
         if (!window.confirm('Are you sure you want to delete this image?')) return;
 
         try {
-            await fetch(`http://localhost:5000/api/gallery/${id}`, {
+            await fetch(`${config.API_URL}/api/gallery/${id}`, {
                 method: 'DELETE',
             });
             setItems(items.filter(item => item._id !== id));
@@ -150,7 +151,7 @@ const Admin = () => {
                     {items.map((item) => (
                         <div key={item._id} className="bg-white rounded-lg shadow-md overflow-hidden group relative">
                             <img
-                                src={`http://localhost:5000${item.imageUrl}`}
+                                src={`${config.API_URL}${item.imageUrl}`}
                                 alt={item.title}
                                 className="w-full h-48 object-cover"
                             />
