@@ -26,7 +26,7 @@ if (!fs.existsSync(uploadDir)) {
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://studioproject02.onrender.com'],
+    origin: [ 'https://freezstudio.vercel.app','http://localhost:5173'],
     credentials: true
 }));
 app.use(express.json());
